@@ -4,7 +4,7 @@ const backendBasURL = 'http://localhost:3333';
 
 // *** Locale Config ***
 const language = 'en';
-const projectTitle = 'Property APP'
+const projectTitle = 'Proper APP'
 
 const config = {
   baseURL,
