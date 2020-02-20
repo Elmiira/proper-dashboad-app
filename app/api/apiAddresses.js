@@ -18,5 +18,5 @@ export const DELETE_TENANT_API = tenantId =>
 export const DAWA_API = (street, houseNumber) =>
   `https://dawa.aws.dk/adgangsadresser?vejnavn=${street}&husnr=${houseNumber}&struktur=mini`;
 
-export const GET_ADDRESS = id =>
+export const DAWA_ADDRESS_API = id =>
   `https://dawa.aws.dk/adgangsadresser/${id}`

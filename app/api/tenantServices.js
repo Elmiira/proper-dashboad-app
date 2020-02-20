@@ -5,7 +5,7 @@ import {
   ADD_TENANT_API,
   DELETE_TENANT_API,
   DAWA_API,
-  GET_ADDRESS,
+  DAWA_ADDRESS_API,
 } from './apiAddresses';
 
 export function fetchTenant({ page, pageSize, query }) {
@@ -57,7 +57,7 @@ export function validateAddress(street, houseNumber) {
 }
 
 export function getAddress(id) {
-  const url = GET_ADDRESS(id);
+  const url = DAWA_ADDRESS_API(id);
   return request({
     method: 'GET',
     url: url,
