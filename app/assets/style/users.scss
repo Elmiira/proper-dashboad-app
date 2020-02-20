@@ -1,0 +1,200 @@
+@import './bootstrap/mixins';
+@import "bootstrap/_variables";
+@import "request-result";
+
+.users-wrapper{
+  .loading-result{
+    .progress{
+      margin : 0;
+      height: 4px;
+      .progress-bar{
+
+      }
+    }
+  }
+  .empty-result{
+    font-size: $font-size-base;
+    padding : $padding-base;
+  }
+}
+
+.form-row {
+  .users-actions {
+    padding: $padding-lg 0 $padding-sm;
+  }
+}
+
+.users-list {
+  margin-top: $margin-base;
+  .users-filter-form-title{
+    .users-table-info-label{
+      margin-left: 10px;
+      display: inline-block;
+    }
+    .users-table-info-value{
+      margin-left: 50px;
+      display: inline-block;
+    }
+  }
+  table.users-table {
+    border-right: 5px solid $gray-40;
+    border-left: 5px solid $gray-40;
+    border-bottom: 1px solid $gray-40;
+    background: $white;
+    thead {
+      tr {
+        th {
+          height: 50px;
+        }
+      }
+    }
+    tbody{
+      tr{
+        &.users-table-row {
+          &.reservation-pending{
+            background-color: #EFEFEF;
+          }
+          &.reserved{
+            background-color: #EFEFEF;
+          }
+          &.reservation-failed{
+            background-color: #EFEFEF;
+          }
+          &.payment-failed{
+            background-color: #EFEFEF;
+          }
+          &.payment-succeed{
+            background-color: #EFEFEF;
+          }
+          &.reversed{
+            background-color: #E3F2FD;
+          }
+          &.issue-succeed{
+            background-color: #C8E6C9;
+          }
+          &.issue-failed-with-reference{
+            background-color: #FFCCBC;
+          }
+          &.issue-failed{
+            background-color: #FFEBEE;
+          }
+          &.users-with-cancellation {
+            background-color: #fff59d;
+          }
+        }
+      }
+    }
+  }
+  .action-button {
+    @include border-radius($border-radius-lg);
+    padding: 6px 0px 4px 3px;
+    width: auto !important;
+    min-width: auto;
+  }
+  .action-list {
+    width: 135px;
+    .btn {
+      margin-right: 0px;
+    }
+  }
+  .submit-container {
+    padding: $padding-base 0 0 ;
+    justify-content: flex-end;
+  }
+}
+
+.users-filter-form-title{
+  border-right: 5px solid $gray-100;
+  border-left: 5px solid $gray-100;
+  border-bottom: 1px solid $gray-30;
+  padding: $padding-base 25px;
+  background: $white;
+  .form-title-icon{
+    font-size: 50px;
+    margin-left: $margin-lg;
+    color: $gray-90;
+  }
+  .btn-xs{
+    &.open{
+      i:before{
+        content: "\e901" !important;
+      }
+    }
+  }
+}
+
+.users-col-container {
+
+  .users-row {
+
+    .users-col {
+      @include make-col(12);
+      border: 1px solid $gray-40;
+      .col-label {
+        padding-top: $padding-sm + $padding-xs;
+        padding-bottom: $padding-sm + $padding-xs;
+        padding-left: $padding-sm;
+        display: inline-block;
+        min-width: 140px;
+        font-size: $h5-font-size;
+        border-left: 1px solid $gray-40;
+        color: $black;
+      }
+      .col-content {
+        padding-top: $padding-sm + $padding-xs;
+        padding-bottom: $padding-sm + $padding-xs;
+        padding-left: $padding-sm;
+        padding-right: $padding-sm;
+        display: inline-block;
+        font-size: $h4-font-size;
+        color: $gray-90;
+
+      }
+      @include media-breakpoint-up(lg) {
+        @include make-col(6);
+      }
+      &.full-row{
+        @include media-breakpoint-up(lg) {
+          @include make-col(12);
+        }
+      }
+    }
+
+  }
+
+}
+.users-desc{
+  table{
+    margin-top : $margin-base;
+    td{
+      &.desc-user-id-col{
+        min-width: 120px;
+      }
+      &.desc-date-col{
+        min-width: 150px;
+      }
+    }
+  }
+  .submit-container {
+    padding: $padding-base 0 0 ;
+  }
+}
+.users-filters{
+  .form-row .control-label {
+    min-width: 130px;
+    &.sm{
+      min-width: 80px;
+    }
+  }
+}
+
+
+
+.users-name, .users-date {
+  width: 280px;
+  margin-left: $margin-lg;
+}
+
+.users-creator {
+  width: 200px;
+}

@@ -1,0 +1,160 @@
+@import './bootstrap/mixins';
+@import "bootstrap/_variables";
+@import "request-result";
+
+.compensation-wrapper{
+  .loading-result{
+    .progress{
+      margin : 0;
+      height: 4px;
+      .progress-bar{
+
+      }
+    }
+  }
+  .empty-result{
+    font-size: $font-size-base;
+    padding : $padding-base;
+  }
+}
+.compensation-list {
+  margin-top: $margin-base;
+  table.compensation-table {
+    border-right: 5px solid $gray-40;
+    border-left: 5px solid $gray-40;
+    border-bottom: 1px solid $gray-40;
+    background: $white;
+    thead {
+      tr {
+        th {
+          height: 50px;
+        }
+      }
+    }
+    tbody{
+      tr{
+        &.isB2b{
+          background-color: #E1BEE7;
+        }
+        td {
+          font-size: 12px;
+          max-width: 120px;
+          word-break: break-all;
+        }
+      }
+    }
+    .custom-control {
+
+      padding: 0 5px;
+      .custom-control-indicator{
+        top : -13px;
+      }
+    }
+  }
+  .action-button {
+    @include border-radius($border-radius-lg);
+    padding: 6px 0px 4px 3px;
+    width: auto !important;
+    min-width: auto;
+  }
+  .action-list {
+    width: 135px;
+    .btn {
+      margin-right: 0px;
+    }
+  }
+  .submit-container {
+    padding: $padding-base 0 0 ;
+    justify-content: flex-end;
+  }
+}
+
+.compensation-filter-form-title{
+  border-right: 5px solid $gray-100;
+  border-left: 5px solid $gray-100;
+  border-bottom: 1px solid $gray-30;
+  padding: $padding-base 25px;
+  background: $white;
+  .form-title-icon{
+    font-size: 50px;
+    margin-left: $margin-lg;
+    color: $gray-90;
+  }
+  .btn-xs{
+    &.open{
+      i:before{
+        content: "\e901" !important;
+      }
+    }
+  }
+}
+.form-row {
+  .compensation-actions {
+    padding: $padding-lg 0 $padding-sm;
+  }
+}
+
+.compensation-col-container {
+
+  .compensation-row {
+
+    .compensation-col {
+
+      @include make-col(12);
+      border: 1px solid $gray-40;
+      .col-label {
+        padding-top: $padding-sm + $padding-xs;
+        padding-bottom: $padding-sm + $padding-xs;
+        padding-left: $padding-sm;
+        display: inline-block;
+        min-width: 140px;
+        font-size: $h5-font-size;
+        border-left: 1px solid $gray-40;
+        color: $black;
+      }
+      .col-content {
+        padding-top: $padding-sm + $padding-xs;
+        padding-bottom: $padding-sm + $padding-xs;
+        padding-left: $padding-sm;
+        padding-right: $padding-sm;
+        display: inline-block;
+        font-size: $h4-font-size;
+        color: $gray-90;
+
+      }
+      @include media-breakpoint-up(lg) {
+        @include make-col(6);
+        &.full{
+          @include make-col(12);
+        }
+      }
+    }
+
+  }
+
+}
+.compensation-desc{
+  table{
+    margin-top : $margin-base;
+    td{
+      &.desc-user-id-col{
+        min-width: 120px;
+      }
+      &.desc-date-col{
+        min-width: 150px;
+      }
+    }
+  }
+  .submit-container {
+    padding: $padding-base 0 0 ;
+  }
+}
+.compensation-filters{
+  .form-row .control-label {
+    min-width: 130px;
+    &.sm{
+      min-width: 80px;
+    }
+  }
+}
+

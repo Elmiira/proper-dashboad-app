@@ -1,0 +1,210 @@
+@import './bootstrap/mixins';
+@import "bootstrap/_variables";
+
+
+.login-page {
+  background: $gray-20;
+  font-family: IRANSans;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  .login-box {
+    .jimbo-container {
+      max-width: 100%;
+      width: 300px;
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+  .description-login-box {
+    padding: $padding-base*2 0;
+  }
+  .description-login {
+    font-size: $h4-font-size;
+    color: $gray-80;
+  }
+  .btn-login {
+    padding-right: 55px;
+    i {
+      font-size: 24px;
+      position: absolute;
+      right: 15px;
+    }
+  }
+}
+
+.form-row{
+  .form-group {
+    width: 100%;
+    border: 1px solid $gray-30;
+    background: $white;
+    padding: $padding-lg/2 $padding-lg;
+    display: flex;
+    align-items: center;
+    margin-top: -1px;
+    &.dual-input{
+      width: 50%;
+    }
+    &:first-child{
+      &.dual-input{
+        width: calc(50% + 1px);
+        margin-left: -1px;
+      }
+    }
+    &.dual-input-nolabel{
+      width: calc(50% - 100px);
+    }
+    &.dual-input-label{
+      width: calc(50% + 101px);
+      margin-left: -1px;
+    }
+    &.dual-input-equal{
+      @include make-col(12);
+      @include media-breakpoint-up(lg) {
+        @include make-col(6);
+      }
+    }
+    &.justify-left{
+      justify-content: flex-end;
+    }
+    &.dual-input-third{
+      @include make-col(12);
+      @include media-breakpoint-up(lg) {
+        @include make-col(4);
+      }
+    }
+    &.dual-input-one-fourth{
+      @include make-col(12);
+      @include media-breakpoint-up(lg) {
+        @include make-col(3);
+      }
+    }
+    &.dual-input-two-third{
+      @include make-col(12);
+      @include media-breakpoint-up(lg) {
+        @include make-col(8);
+      }
+    }
+    &.disabled{
+      label, input {
+        color: $input-btn-disable-color;
+        pointer-events: none;
+        &::placeholder {
+          color: $input-btn-disable-color;
+        }
+      }
+      .badge-tag-blue{
+        background: $input-btn-disable-color;
+        pointer-events: none;
+      }
+      .stf-icon-calendar{
+        color: $input-btn-disable-color;
+      }
+    }
+    .invalid-feedback{
+      top: calc(100% - 25px);
+      right: 50px;
+      &.with-label{
+        right: 250px;
+      }
+    }
+    &.has-error{
+      label, input {
+        &::placeholder {
+          color: $input-error-placeholder-color;
+        }
+      }
+      .form-control, .date-picker-icon{
+        color: $danger;
+      }
+      .badge-tag-blue{
+        background: $danger;
+      }
+      .DateInput__display-text{
+        color: $input-error-placeholder-color;
+      }
+    }
+  }
+  .control-label {
+    min-width: 200px;
+    font-size: $h4-font-size;
+  }
+  .form-badge-container {
+    position: relative;
+    padding-right: 220px;
+    &:before{
+      content: '';
+      position: absolute;
+      background: white;
+      width: 220px;
+      height: 1px;
+      right: 0;
+      top: -1px;
+    }
+    .form-badge{
+      display: flex;
+      align-items: center;
+      background: $gray-20;
+      border-radius: $border-radius-lg;
+      padding: $padding-xs $padding-sm;
+      margin-left: $margin-sm;
+      height: 40px;
+      span{
+        padding: 0 10px;
+      }
+      .close{
+        color: $gray-70;
+        transition: all .3s;
+        margin-left: $margin-xs;
+        cursor: pointer;
+        &:hover{
+          color: $gray-100;
+        }
+      }
+    }
+  }
+  .Select{
+    width: 100%;
+  }
+  .btn-add-container{
+    max-width: 105px;
+    margin-right: -1px;
+  }
+}
+.form-box{
+  margin-bottom: $margin-base;
+  &.overflow{
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+  .form-row{
+    &:first-child{
+      @include border-top-radius($border-radius);
+    }
+    &:last-child{
+      @include border-bottom-radius($border-radius);
+    }
+  }
+}
+.date-picker{
+  width: 100%;
+}
+.date-picker-icon{
+  font-size: 24px;
+  color: $gray-100;
+}
+.preview-code{
+  font-weight: $font-weight-bold;
+  font-size: 36px;
+  margin: -10px 0;
+}
+.submit-container{
+  display: flex;
+  justify-content: flex-end;
+  padding: $padding-base 0 170px;
+}
+
+

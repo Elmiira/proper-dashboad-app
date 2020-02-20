@@ -1,0 +1,141 @@
+@import './bootstrap/mixins';
+@import "bootstrap/_variables";
+@import "request-result";
+
+.tickets-list {
+  table.ticket-table {
+    border-right: 5px solid $gray-40;
+    border-left: 5px solid $gray-40;
+    border-bottom: 1px solid $gray-40;
+    background: $white;
+    thead {
+      tr {
+        th {
+          height: 50px;
+        }
+      }
+    }
+    tbody{
+      tr {
+        &.ticket-row {
+
+        }
+        &.ticket-canceled-row {
+          background-color: #fff59d;
+        }
+        &.ticket-incomplete-row {
+          background-color: #FFEBEE;
+        }
+        .custom-control {
+          padding: 0 5px;
+          .custom-control-indicator{
+            top : -13px;
+          }
+        }
+      }
+    }
+  }
+  .action-button {
+    @include border-radius($border-radius-lg);
+    padding: 6px 0px 4px 3px;
+    width: auto !important;
+    min-width: auto;
+  }
+  .action-list {
+    width: 135px;
+    .btn {
+      margin-right: 0px;
+    }
+  }
+}
+
+.tickets-col-container {
+  margin-bottom: $margin-base;
+  .ticket-row {
+
+    .ticket-col {
+      @include make-col(12);
+      border: 1px solid $gray-40;
+      .col-label {
+        padding-top: $padding-sm + $padding-xs;
+        padding-bottom: $padding-sm + $padding-xs;
+        padding-left: $padding-sm;
+        display: inline-block;
+        min-width: 140px;
+        font-size: $h5-font-size;
+        border-left: 1px solid $gray-40;
+        color: $black;
+      }
+      .col-content {
+        padding-top: $padding-sm + $padding-xs;
+        padding-bottom: $padding-sm + $padding-xs;
+        padding-left: $padding-sm;
+        padding-right: $padding-sm;
+        display: inline-block;
+        font-size: $h4-font-size;
+        color: $gray-90;
+        &.small-span{
+          font-size : 14px;
+        }
+
+      }
+      @include media-breakpoint-up(lg) {
+        @include make-col(6);
+      }
+      @include media-breakpoint-up(xl) {
+        @include make-col(4);
+      }
+      &.full{
+        @include media-breakpoint-up(lg) {
+          @include make-col(12);
+        }
+        @include media-breakpoint-up(xl) {
+          @include make-col(12);
+        }
+      }
+    }
+
+  }
+}
+
+.ticket-cancellation{
+  .submit-container {
+    padding: $padding-base 0 0;
+  }
+
+  .tickets-col-container {
+    .ticket-row {
+      .ticket-col {
+        @include make-col(12);
+        @include media-breakpoint-up(lg) {
+          @include make-col(6);
+        }
+      }
+
+    }
+  }
+}
+
+.ticket-refund-info{
+  .form-title{
+    margin-top : $margin-lg;
+  }
+}
+
+.resend-tickets{
+  .form-title{
+    margin-top : $margin-lg;
+  }
+}
+
+
+
+.ticket-name, .ticket-date {
+  width: 280px;
+  margin-left: $margin-lg;
+}
+
+.ticket-creator {
+  width: 200px;
+}
+

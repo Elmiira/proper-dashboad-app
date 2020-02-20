@@ -1,0 +1,159 @@
+@import './bootstrap/mixins';
+@import "bootstrap/_variables";
+
+.campaign-card {
+  display: flex;
+  .card-sidebar{
+    width: $campaign-card-side-width;
+    padding: $campaign-card-side-padding-y $campaign-card-padding 0;
+    font-size: $campaign-card-side-size;
+    color: $campaign-card-side-color;
+    i{
+      display: none;
+    }
+  }
+  .card-info{
+    width: 100%;
+    background: $gray-10;
+    .campaign-card-details{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: $campaign-card-padding;
+    }
+    .campaign-card-tags{
+      padding: $campaign-card-padding;
+      border-top: 1px solid $gray-30;
+    }
+  }
+  &.dumping-campaign{
+    .card-sidebar{
+      background: $blue;
+      .stf-icon-price-dump{
+        display: block;
+      }
+    }
+  }
+  &.discount-campaign{
+    .card-sidebar{
+      background: $violet;
+      .stf-icon-discount{
+        display: block;
+      }
+    }
+  }
+  &.expired-state{
+    .card-sidebar{
+      background: $gray-40;
+    }
+  }
+}
+.campaign-card-details{
+  font-size: $h4-font-size;
+  .campaign-state{
+    position: relative;
+    font-size: 24px;
+    line-height: 0;
+    width: 54px;
+    height: 54px;
+    padding: $padding-lg/2;
+    margin-left: $padding-lg/2;
+    .stf-icon-camp-upcoming{
+      color: $green;
+    }
+    .stf-icon-camp-pause{
+      color: $yellow;
+    }
+    .stf-icon-camp-done{
+      color: $gray-40;
+    }
+  }
+  .campaign-actions{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    font-size: 24px;
+    padding: $padding-xs;
+    .campaign-actions-item{
+      padding: 3px $margin-sm;
+      line-height: 0;
+      cursor: pointer;
+      text-align: center;
+      color: $body-color;
+    }
+    .dropdown-menu{
+      min-width: 100px;
+    }
+  }
+}
+.campaign-card-tags{
+  .card-tags-row{
+    display: flex;
+    align-items: center;
+  }
+  .tag-title {
+    width: 100px;
+    padding: 0 $campaign-card-padding;
+    font-size: $font-size-sm;
+    color: $gray-70;
+  }
+  .badge{
+    margin: $margin-xs;
+  }
+}
+.campaign-search-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .dropdown-toggle{
+    font-size: $h4-font-size;
+    padding: $padding-xs;
+    margin: 0 $margin-sm;
+    i{
+      font-size: 24px;
+    }
+    &:after{
+      display: none;
+    }
+  }
+  .dropdown-menu{
+    margin-left: -60px;
+    width: 165px;
+  }
+  .form-group{
+    width: 400px;
+    input{
+      padding-left: 40px;
+    }
+    i{
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 20px;
+      color: $gray-80;
+    }
+  }
+}
+.campaign-sort-bar{
+  display: flex;
+  text-align: right;
+  margin: 15px 0;
+  padding-right: 150px;
+  font-weight: $font-weight-bold;
+  font-size: $h4-font-size;
+  .campaign-date{
+    color: $primary;
+    cursor: pointer;
+    i{
+      font-size: 24px;
+      vertical-align: middle;
+    }
+  }
+}
+.campaign-name, .campaign-date{
+  width: 280px;
+  margin-left: $margin-lg;
+}
+.campaign-creator{
+  width: 200px;
+}

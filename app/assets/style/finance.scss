@@ -1,0 +1,130 @@
+@import './bootstrap/mixins';
+@import "bootstrap/_variables";
+@import "request-result";
+
+
+.finance-list {
+  margin-top: $margin-base;
+  table.finance-table {
+    border-right: 5px solid $gray-40;
+    border-left: 5px solid $gray-40;
+    border-bottom: 1px solid $gray-40;
+    background: $white;
+    thead {
+      tr {
+        th {
+          height: 50px;
+        }
+      }
+    }
+    .custom-control {
+
+      padding: 0 5px;
+      .custom-control-indicator{
+        top : -13px;
+      }
+    }
+  }
+  .action-button {
+    @include border-radius($border-radius-lg);
+    padding: 6px 0px 4px 3px;
+    width: auto !important;
+    min-width: auto;
+  }
+  .action-list {
+    width: 135px;
+    .btn {
+      margin-right: 0px;
+    }
+  }
+  .submit-container {
+    padding: $padding-base 0 0 ;
+    justify-content: flex-end;
+  }
+}
+
+.finance-filter-form-title{
+  border-right: 5px solid $gray-100;
+  border-left: 5px solid $gray-100;
+  border-bottom: 1px solid $gray-30;
+  padding: $padding-base 25px;
+  background: $white;
+  .form-title-icon{
+    font-size: 50px;
+    margin-left: $margin-lg;
+    color: $gray-90;
+  }
+  .btn-xs{
+    &.open{
+      i:before{
+        content: "\e901" !important;
+      }
+    }
+  }
+}
+.form-row {
+  .finance-actions {
+    padding: $padding-lg 0 $padding-sm;
+  }
+}
+
+.finance-col-container {
+
+  .finance-row {
+
+    .finance-col {
+      @include make-col(12);
+      border: 1px solid $gray-40;
+      .col-label {
+        padding-top: $padding-sm + $padding-xs;
+        padding-bottom: $padding-sm + $padding-xs;
+        padding-left: $padding-sm;
+        display: inline-block;
+        min-width: 140px;
+        font-size: $h5-font-size;
+        border-left: 1px solid $gray-40;
+        color: $black;
+      }
+      .col-content {
+        padding-top: $padding-sm + $padding-xs;
+        padding-bottom: $padding-sm + $padding-xs;
+        padding-left: $padding-sm;
+        padding-right: $padding-sm;
+        display: inline-block;
+        font-size: $h4-font-size;
+        color: $gray-90;
+
+      }
+      @include media-breakpoint-up(lg) {
+        @include make-col(6);
+      }
+    }
+
+  }
+
+}
+.finance-desc{
+  table{
+    margin-top : $margin-base;
+    td{
+      &.desc-user-id-col{
+        min-width: 120px;
+      }
+      &.desc-date-col{
+        min-width: 150px;
+      }
+    }
+  }
+  .submit-container {
+    padding: $padding-base 0 0 ;
+  }
+}
+.finance-filters{
+  .form-row .control-label {
+    min-width: 130px;
+    &.sm{
+      min-width: 80px;
+    }
+  }
+}
+

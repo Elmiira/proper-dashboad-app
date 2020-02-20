@@ -1,0 +1,98 @@
+@import './bootstrap/mixins';
+@import "bootstrap/_variables";
+@import "admin-st-icon.css";
+
+.sidebar{
+  background: $gray-30;
+  width: 80px;
+}
+.side-bar-item {
+  padding-top: 30px;
+}
+
+.selected {
+  background-color:  $gray-50;
+}
+
+.sidebar-menu{
+  ul{
+    padding: 0;
+    margin: 0;
+  }
+  li{
+    position: relative;
+    font-size: $h4-font-size;
+    color: $gray-100;
+    text-align: center;
+    height: 80px;
+    border-bottom: 1px solid $gray-40;
+    a{
+      color: $gray-100;
+    }
+    i{
+      position: relative;
+      font-size: 40px;
+      display: block;
+      z-index: 2;
+      background: $gray-30;
+      padding: $padding-base;
+      height: 79px;
+    }
+    .menu-text{
+      position: absolute;
+      right: -80px;
+      opacity: 0;
+      height: 100%;
+      white-space: nowrap;
+      top: 0;
+      padding: $padding-base 0 $padding-base $padding-lg;
+      line-height: 40px;
+      background: $gray-30;
+      background: $gray-50;
+
+      transition: all .3s;
+      z-index: 1;
+    }
+    &:hover{
+      i{
+        background: $gray-30;
+      }
+      .menu-text{
+        background: $gray-30;
+        right: 100%;
+        opacity: 1;
+      }
+    }
+    &.active{
+      i{
+        background: $gray-50;
+      }
+      .menu-text{
+        background: $gray-50;
+      }
+      &:before{
+        content: '';
+        width: 3px;
+        height: 30px;
+        background: $gray-100;
+        position: absolute;
+        right: 0;
+        top: calc(50% - 15px);
+        z-index: 3;
+        box-shadow: 0 0 30px 1px #383B41;
+      }
+    }
+    &.dashboard-menu{
+      background: $gray-100;
+      a, i{
+        color: $white;
+        background: $gray-100;
+        height: auto;
+      }
+      .menu-text{
+        background: $gray-100;
+        color: $white;
+      }
+    }
+  }
+}

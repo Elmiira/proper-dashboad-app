@@ -1,0 +1,19 @@
+@import './bootstrap/mixins';
+@import "bootstrap/_variables";
+
+.request-result-box {
+  display: inline-block;
+  margin-left: 40px;
+  padding: 15px;
+  font-size: $h4-font-size;
+  &.PENDING {
+    color: $secondary;
+  }
+  &.FAILED {
+    color: $primary-dark;
+  }
+  &.SUCCEED {
+    color: $success;
+  }
+}
+

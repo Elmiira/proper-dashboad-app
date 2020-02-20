@@ -1,0 +1,107 @@
+@import './bootstrap/mixins';
+@import "bootstrap/_variables";
+@import "./mixins.scss";
+
+@font-face {
+  font-family: IRANSans;
+  src: url('https://cdnsnapptrip.com/fonts/mobile-fonts/IRANSansMobile(FaNum)_Light.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: IRANSans;
+  src: url('https://cdnsnapptrip.com/fonts/mobile-fonts/IRANSansMobile(FaNum).ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: IRANSans;
+  src: url('https://cdnsnapptrip.com/fonts/mobile-fonts/IRANSansMobile(FaNum)_Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: IRANSans;
+  src: url('https://cdnsnapptrip.com/fonts/mobile-fonts/IRANSansMobile(FaNum)_Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: EnIRANSans;
+  src: url('https://cdnsnapptrip.com/fonts/en-mobile-fonts/IRANSansMobile_Light.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: EnIRANSans;
+  src: url('https://cdnsnapptrip.com/fonts/en-mobile-fonts/IRANSansMobile.ttf') format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: EnIRANSans;
+  src: url('https://cdnsnapptrip.com/fonts/en-mobile-fonts/IRANSansMobile_Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: EnIRANSans;
+  src: url('https://cdnsnapptrip.com/fonts/en-mobile-fonts/IRANSansMobile_Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+.container-area{
+  display: flex;
+  justify-content: stretch;
+}
+
+.main-container {
+  padding-top: $padding-lg*2;
+  margin: $margin-base;
+}
+
+.dropdown-primary{
+  .dropdown-toggle{
+    width: 132px;
+    &:after{
+      float: right;
+      margin-top: 8px;
+    }
+  }
+}
+
+.suggestion-item {
+  padding: 12px;
+  line-height: 1.6;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  &:first-child {
+    border: 0;
+  }
+  i {
+    font-size: 20px;
+    margin: $margin-sm 0 $margin-sm $margin-sm;
+  }
+  .airport-container {
+    flex: 1;
+  }
+  .city-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    .airport-code {
+      font-size: $font-size-sm;
+      color: $primary;
+      font-weight: $font-weight-bold;
+    }
+  }
+  .airport-name {
+    color: $gray-60;
+    font-size: $font-size-sm;
+  }
+  &.airline-suggestion{
+    align-items: center;
+    .airline-img{
+      width: 20px;
+      margin-left: $margin-sm;
+    }
+    .airline-name{
+      //font-size: $font-size-base;
+    }
+  }
+}

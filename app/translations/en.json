@@ -1,0 +1,10 @@
+{
+  "boilerplate.components.Layout.Tenant": "Tenant",
+  "boilerplate.components.Layout.Logout": "log out",
+  "boilerplate.containers.Tenant.TableTitle": "Tenant",
+  "boilerplate.components.App.ProjectTitle": "Property APP",
+  "boilerplate.components.Login.WelcomeMessage": "Hi!",
+  "boilerplate.components.Login.Send": "send",
+  "boilerplate.components.Login.Username": "username",
+  "boilerplate.components.Login.Password": "password"
+}

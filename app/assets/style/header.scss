@@ -1,0 +1,35 @@
+@import './bootstrap/mixins';
+@import "bootstrap/_variables";
+
+.header{
+  background: $gray-60;
+  padding: $padding-base $padding-lg;
+  height: 80px;
+}
+.user-info{
+  display: inline-block;
+  .person-img{
+    background: $white;
+    color: $gray-60;
+    width: 40px;
+    height: 40px;
+    border-radius: $border-radius-lg;
+    font-size: 40px;;
+    overflow: hidden;
+    position: relative;
+    i{
+      position: absolute;
+    }
+  }
+  .person-name{
+    color: $white;
+    font-size: $h4-font-size;
+    margin: 0 $margin-base 0 $margin-sm;
+    cursor: pointer;
+    i{
+      font-size: 24px;
+      margin: 0 $margin-sm;
+      vertical-align: middle;
+    }
+  }
+}

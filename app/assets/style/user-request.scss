@@ -1,0 +1,214 @@
+@import './bootstrap/mixins';
+@import "bootstrap/_variables";
+@import "request-result";
+
+.user-request-wrapper {
+  .loading-result {
+    .progress {
+      margin: 0;
+      height: 4px;
+      .progress-bar {
+
+      }
+    }
+  }
+  .empty-result {
+    font-size: $font-size-base;
+    padding: $padding-base;
+  }
+}
+
+.user-request-list {
+  margin-top: $margin-base;
+  .user-request-filter-form-title {
+    .user-request-table-info-label {
+      margin-left: 10px;
+      display: inline-block;
+    }
+    .user-request-table-info-value {
+      margin-left: 50px;
+      display: inline-block;
+    }
+  }
+  table.user-request-table {
+    border-right: 5px solid $gray-40;
+    border-left: 5px solid $gray-40;
+    border-bottom: 1px solid $gray-40;
+    background: $white;
+    thead {
+      tr {
+        th {
+          height: 50px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        &.user-request-table-row {
+          &.done-ur{
+            background-color: #C8E6C9;
+          }
+          &.not-assigned-ur{
+            background-color: #fff59d;
+          }
+        }
+      }
+    }
+  }
+  .action-button {
+    @include border-radius($border-radius-lg);
+    padding: 6px 0px 4px 3px;
+    width: auto !important;
+    min-width: auto;
+  }
+  .action-list {
+    width: 135px;
+    .btn {
+      margin-right: 0px;
+    }
+  }
+  .submit-container {
+    padding: $padding-base 0 0;
+    justify-content: flex-end;
+  }
+}
+
+.user-request-filter-form-title {
+  border-right: 5px solid $gray-100;
+  border-left: 5px solid $gray-100;
+  border-bottom: 1px solid $gray-30;
+  padding: $padding-base 25px;
+  background: $white;
+  .form-title-icon {
+    font-size: 50px;
+    margin-left: $margin-lg;
+    color: $gray-90;
+  }
+  .btn-xs {
+    &.open {
+      i:before {
+        content: "\e901" !important;
+      }
+    }
+  }
+}
+
+.user-request-col-container {
+
+  .user-request-row {
+
+    .user-request-col {
+      @include make-col(12);
+      border: 1px solid $gray-40;
+      .col-label {
+        padding-top: $padding-sm + $padding-xs;
+        padding-bottom: $padding-sm + $padding-xs;
+        padding-left: $padding-sm;
+        display: inline-block;
+        min-width: 140px;
+        font-size: $h5-font-size;
+        border-left: 1px solid $gray-40;
+        color: $black;
+      }
+      .col-content {
+        padding-top: $padding-sm + $padding-xs;
+        padding-bottom: $padding-sm + $padding-xs;
+        padding-left: $padding-sm;
+        padding-right: $padding-sm;
+        display: inline-block;
+        font-size: $h4-font-size;
+        color: $gray-90;
+
+      }
+      @include media-breakpoint-up(lg) {
+        @include make-col(6);
+      }
+      &.full-row {
+        @include media-breakpoint-up(lg) {
+          @include make-col(12);
+        }
+      }
+    }
+
+  }
+
+}
+
+.user-request-assignment {
+  table {
+    margin-top: $margin-base;
+    td {
+      &.desc-user-id-col {
+        min-width: 120px;
+      }
+      &.desc-date-col {
+        min-width: 150px;
+      }
+    }
+  }
+  .submit-container {
+    padding: $padding-base 0 0;
+  }
+}
+
+.user-request-filters {
+  .form-row .control-label {
+    min-width: 130px;
+    &.sm {
+      min-width: 80px;
+    }
+  }
+}
+
+.user-request-name, .user-request-date {
+  width: 280px;
+  margin-left: $margin-lg;
+}
+
+.user-request-creator {
+  width: 200px;
+}
+
+.user-selector-box{
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.user-request-report-form-title{
+  border-right: 5px solid $gray-100;
+  border-left: 5px solid $gray-100;
+  border-bottom: 1px solid $gray-30;
+  padding: $padding-base 25px;
+  background: $white;
+  margin-bottom: 10px;
+  .item{
+    display: inline-block;
+    margin-left: $margin-lg;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  .item-badge{
+    background-color: $primary;
+    padding-left : 15px;
+    padding-right: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    color : $white;
+    border-radius: $border-radius-lg;
+  }
+  .form-title-icon{
+    font-size: 50px;
+    margin-left: $margin-lg;
+    color: $gray-90;
+  }
+  .btn-xs{
+    &.open{
+      i:before{
+        content: "\e901" !important;
+      }
+    }
+  }
+}

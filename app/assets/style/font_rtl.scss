@@ -1,0 +1,19 @@
+
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+    src:
+      url('#{$file-path}.eot'),
+      url('#{$file-path}.woff') format('woff'),
+      url('#{$file-path}.woff2') format('woff2'),
+      url('#{$file-path}.ttf') format('truetype');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}
+
+@include font-face( sans-font , 'https://cdnsnapptrip.com/fonts/iransans/IRANSansWeb_Bold', bold, normal);
+@include font-face( sans-font , 'https://cdnsnapptrip.com/fonts/iransans/IRANSansWeb_Medium', 500, normal);
+@include font-face( sans-font , 'https://cdnsnapptrip.com/fonts/iransans/IRANSansWeb_UltraLight', 200, normal);
+@include font-face( sans-font , 'https://cdnsnapptrip.com/fonts/iransans/IRANSansWeb_Light', 300, normal);
+@include font-face( sans-font , 'https://cdnsnapptrip.com/fonts/iransans/IRANSansWeb', normal, normal);

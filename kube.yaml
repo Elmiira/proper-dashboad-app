@@ -1,0 +1,107 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: flight-international-admin-ui
+  namespace: $CI_PROJECT_NAMESPACE
+spec:
+  selector:
+    app: flight-international-admin-ui
+  ports:
+    - name: app
+      protocol: TCP
+      port: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flight-international-admin-ui
+  namespace: $CI_PROJECT_NAMESPACE
+spec:
+  replicas: $REPLICAS
+  selector:
+    matchLabels:
+      app: flight-international-admin-ui
+  template:
+    metadata:
+      labels:
+        app: flight-international-admin-ui
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - flight-international-admin-ui
+                topologyKey: kubernetes.io/hostname
+              weight: 100
+      imagePullSecrets:
+        - name: "$imagePullSecrets"
+      containers:
+        - name: flight-international-admin-ui
+          image: localhost/$CI_PROJECT_PATH/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHA
+          resources:
+            requests:
+              memory: "128Mi"
+            limits:
+              memory: "512Mi"
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - name: app
+              containerPort: 3000
+          env:
+            - name: CONTEXT
+              value: $CONTEXT
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: flight-international-admin-ui
+  namespace: $CI_PROJECT_NAMESPACE
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    kubernetes.io/ingress.class: "$CI_PROJECT_NAMESPACE-$CONTEXT"
+    nginx.ingress.kubernetes.io/rewrite-target: /${DOLLAR}1
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "false"
+spec:
+  tls:
+    - hosts:
+        - flight-international.snapptrip.com
+      secretName: snapptrip-com-ssl
+  rules:
+    - host: flight-international.snapptrip.com
+      http:
+        paths:
+          - path: "/?(.*)"
+            backend:
+              serviceName: flight-international-admin-ui
+              servicePort: 3000         
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: flight-international-admin-ui-beta
+  namespace: $CI_PROJECT_NAMESPACE
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    kubernetes.io/ingress.class: "$CI_PROJECT_NAMESPACE-$CONTEXT"
+    nginx.ingress.kubernetes.io/rewrite-target: /${DOLLAR}1
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+spec:
+  tls:
+    - hosts:
+        - flight-international.snapptrip.com
+      secretName: snapptrip-com-ssl
+  rules:
+    - host: my.interflight.ptp
+      http:
+      http:
+        paths:
+          - path: "/?(.*)"
+            backend:
+              serviceName: flight-international-admin-ui
+              servicePort: 3000
+         

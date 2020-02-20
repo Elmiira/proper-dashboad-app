@@ -1,0 +1,132 @@
+@import './bootstrap/mixins';
+@import "bootstrap/_variables";
+
+.rtl {
+  direction: rtl;
+}
+
+.alert-dismissible {
+  padding: $alert-padding-y $alert-padding-x $alert-padding-y $alert-padding-x*3;
+  .close {
+    right: auto;
+    left: 0;
+  }
+}
+
+/**** LIST ****/
+.list{
+  li{
+    padding-left: 0;
+    padding-right: 18px;
+    &:before {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+/**** progress-bar ****/
+.progress-bar {
+  span{
+    right: auto;
+    left: -15px;
+  }
+}
+
+/**** Pagination ****/
+.pagination{
+  .page-item {
+    i {
+      display: block;
+      transform: rotate(180deg);
+    }
+  }
+}
+/**** modal ****/
+.modal-header {
+  .close {
+    right: auto;
+    left: -$modal-close-width/2;
+    @include media-breakpoint-down(xs) {
+      right: auto;
+      left: $modal-inner-padding;
+    }
+  }
+}
+.modal-footer {
+  > :not(:first-child) {
+    margin-left: 0;
+    margin-right: $modal-inner-padding/2;
+  }
+  > :not(:last-child) {
+    margin-right: 0;
+    margin-left: $modal-inner-padding/2;
+  }
+}
+
+/**** Form ****/
+.dropdown{
+  &:before {
+    right: auto;
+    left: $input-btn-padding-x;
+  }
+}
+.dropdown-input{
+  &:before {
+    right: auto;
+    left: $padding-lg/2;
+  }
+}
+.btn{
+  +.btn{
+    margin-left: 0;
+    margin-right: $margin-base;
+  }
+}
+.custom-control-indicator{
+  left: auto;
+  right: 0;
+}
+/**** DatePicker ****/
+.DateRangePickerInput__clear-dates{
+  margin: 0 $input-btn-padding-x-sm 0 0;
+}
+/**** End DatePicker ****/
+
+
+/*** Input Group ***/
+.input-group .form-control:not(:last-child),
+.input-group-addon:not(:last-child),
+.input-group-btn:not(:last-child) > .btn,
+.input-group-btn:not(:last-child) > .btn-group > .btn,
+.input-group-btn:not(:last-child) > .dropdown-toggle,
+.input-group-btn:not(:first-child) > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:not(:first-child) > .btn-group:not(:last-child) > .btn {
+  @include border-right-radius($border-radius);
+  @include border-left-radius(0);
+}
+.input-group-addon:not(:last-child) {
+  border-right: 0;
+}
+.input-group .form-control:not(:first-child),
+.input-group-addon:not(:first-child),
+.input-group-btn:not(:first-child) > .btn,
+.input-group-btn:not(:first-child) > .btn-group > .btn,
+.input-group-btn:not(:first-child) > .dropdown-toggle,
+.input-group-btn:not(:last-child) > .btn:not(:first-child),
+.input-group-btn:not(:last-child) > .btn-group:not(:first-child) > .btn {
+  @include border-left-radius($border-radius);
+  @include border-right-radius(0);
+}
+.form-control + .input-group-addon:not(:first-child) {
+  border-left: 0;
+}
+
+.input-range__label--bottom-min .prefix-text, .input-range__label--bottom-max .prefix-text{
+  margin: 0 0 0 $margin-xs;
+}
+
+.dropdown-toggle:after{
+  margin-left: 0;
+  margin-right: $caret-width;
+}
